@@ -1,0 +1,60 @@
+:root {
+  --accent-clr: hsl(153, 68%, 42%);
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: rubik;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+/* CUSTOMIZATION */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button, input {
+  outline: none;
+  border: none;
+  /* background: transparent; */
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+ul, p {
+  margin: 0;
+  list-style: none;
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+h1,h2,h3 {
+  margin: 0;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+
+
+/* LANDING PAGE */

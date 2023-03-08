@@ -1,0 +1,125 @@
+:root {
+  --neutral-100: hsl(0, 0%, 100%);
+  --neutral-200: hsl(0, 0%, 80%);
+  --neutral-400: hsl(0, 0%, 40%);
+  --neutral-600: hsl(0, 0%, 20%);
+  --neutral-800: hsl(0, 0%, 0%);
+
+  --accent: hsl(153, 68%, 42%);
+
+  --txt-size-200: .8rem;
+  --txt-size-400: 1rem;
+  --txt-size-500: 2rem;
+  --txt-size-600: 3rem;
+  --txt-size-800: 3.5rem;
+
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+/* CUSTOMIZATION */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button, input {
+  outline: none;
+  border: none;
+  /* background: transparent; */
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+ul, p {
+  margin: 0;
+  list-style: none;
+  font-weight: 2
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+h1,h2,h3 {
+  margin: 0;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.logo {
+  width: clamp(180px, 1rem + 10vw, 300px);
+}
+
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding-block: 1rem;
+  padding-inline-start: 4rem;
+  width: 50%;
+}
+
+.primary-nav {
+  display: flex;
+  gap: 3rem;
+}
+
+.big-txt {
+  font-size: var(--txt-size-600);
+}
+
+#landing-page .container {
+  display: flex;
+  /* border: 1px solid red; */
+}
+
+@media (min-width: 768px) {
+  .landing-page__context {
+    order: 1;
+  }
+
+  .landing-page__image {
+    order: 2;
+  }
+}
+
+.landing-page__context {
+  width: 50%;
+}
+.landing-page__image {
+  width: 50%;
+  border-radius: 10px;
+  overflow: hidden !important;
+  border: 1px solid red;
+}
+
+.landing-page__image img {
+  height: 100%;
+}

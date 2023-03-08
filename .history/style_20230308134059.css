@@ -1,0 +1,71 @@
+:root {
+  --neutral-100: hsl(0, 0%, 100%);
+  --neutral-200: hsl(0, 0%, 80%);
+  --neutral-400: hsl(0, 0%, 40%);
+  --neutral-600: hsl(0, 0%, 20%);
+  --neutral-800: hsl(0, 0%, 0%);
+
+  --accent: hsl(153, 68%, 42%);
+
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: 'Effra', Rubik;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+/* CUSTOMIZATION */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button, input {
+  outline: none;
+  border: none;
+  /* background: transparent; */
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+ul, p {
+  margin: 0;
+  list-style: none;
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+h1,h2,h3 {
+  margin: 0;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  border: 1px solid red;
+}
+
+.logo {
+  width: clamp(30rem, 1rem + 10vw, 3rem);
+}
