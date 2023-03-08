@@ -238,12 +238,13 @@ button .wrap h1{
   border-radius: var(--box-radius-lx);
   box-shadow: var(--box-shadow);
   padding-block: 3rem;
-  padding-inline: 16rem;
+  padding-inline: 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
+
 
 #note .bigger-txt {
   width: 70%;
