@@ -500,7 +500,7 @@ button .wrap h1{
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 0rem;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 #business .container-narrow > * {
