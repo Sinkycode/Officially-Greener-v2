@@ -678,6 +678,7 @@ button .wrap h1{
   font-size: 2.3rem;
   width: 85%;
   margin-bottom: 2rem;
+  line-height: 1;
 }
 
 #form-card input, button {
