@@ -657,7 +657,6 @@ button .wrap h1{
 #form-card .container {
   background: #eae7df;
   border-radius: var(--box-radius-lx);
-  box-shadow: var(--box-shadow);
   padding-block: 3rem;
   padding-inline: 16rem;
   display: flex;
