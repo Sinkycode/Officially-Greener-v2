@@ -765,6 +765,11 @@ font-weight: bold;
     margin-left: 0rem;
     margin-top: 15rem;
   }
+
+  
+.fa-apple {
+  font-size: 2rem !important;
+}
   
   .landing-page__context .biggest-txt {
     max-width: 90%;
