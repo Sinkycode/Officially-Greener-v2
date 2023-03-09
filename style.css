@@ -556,8 +556,8 @@ button .wrap h1{
 
 .product {
   background: rgb(250,249,249);
-  background: linear-gradient(90deg, rgba(250,249,249,1) 0%, 
-  rgba(255,255,255,1) 42%, rgba(250,249,249,1) 100%);
+  background: linear-gradient(90deg, hsl(0,0%,95.69%) 0%, 
+  rgba(255,255,255,1) 42%, hsl(0,0%,95.69%) 100%);
   display: grid;
   place-items: center;
   padding-block: 3rem;
