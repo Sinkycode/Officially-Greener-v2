@@ -6,6 +6,7 @@
   --neutral-800: hsl(0, 0%, 0%);
 
   --accent: hsl(153, 68%, 42%);
+  --secondary: rgb(99,100,226);
 
   --txt-size-200: .8rem;
   --txt-size-400: 1rem;
@@ -131,7 +132,7 @@ h1,h2,h3 {
 
 .secondary-btn {
   color: var(--neutral-100);
-  background-color: #7677e4;
+  background-color: var(--secondary);
   padding: .8rem 1.7rem;
   border-radius: var(--box-radius-rg);
   box-shadow: var(--box-shadow);
@@ -244,7 +245,6 @@ button .wrap h1{
   align-items: center;
   text-align: center;
 }
-
 
 #note .bigger-txt {
   width: 70%;
@@ -496,9 +496,16 @@ button .wrap h1{
 
 
 #business .container-narrow {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 0rem;
+  border: 1px solid red;
+}
+
+#business .container-narrow > * {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
 }
 
 
@@ -526,10 +533,18 @@ button .wrap h1{
   gap: 1rem;
 }
 
+#business .business-mockups {
+  display: flex;
+  /* border: 1px solid rebeccapurple; */
+  width: min-content;
+  justify-self: flex-end;
+}
+
+
 .product-card {
   width: 600px;
   padding: 4rem 5rem;
-  background: #f2f2f2;
+  background: hsl(0,0%,95.69%);
   border-radius: 10rem;
 }
 
@@ -579,6 +594,7 @@ button .wrap h1{
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
+  border-radius: var(--box-radius-rg);
 }
 
 .info-card p {
@@ -602,18 +618,12 @@ button .wrap h1{
   font-size: 1.5rem;
 }
 
-.business-mockups {
-  display: flex;
-  /* border: 1px solid rebeccapurple; */
-  width: 50%;
-}
-
 .instagram-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 1px solid red; */
-  width: 50%;
+  /* border: 11px solid rgb(55, 0, 255); */
+  width: 500px;
 }
 
 .instagram-card .container {
