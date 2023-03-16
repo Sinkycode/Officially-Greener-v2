@@ -4,6 +4,10 @@
   --clr-accent-400: hsl(153, 68%, 42%);
 
   --clr-neutral-100: hsl(0, 0%, 100%);  
+  --clr-neutral-200: hsl(0, 0%, 90%);  
+  --clr-neutral-300: hsl(0, 0%, 80%);  
+  --clr-neutral-400: hsl(0, 0%, 70%);  
+  --clr-neutral-500: hsl(0, 0%, 60%);  
   --clr-neutral-900: hsl(0, 0%, 0%);  
 
   --ff-primary: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;;
@@ -21,28 +25,48 @@
   --fs-300: 0.8125rem;
   --fs-400: 0.875rem;
   --fs-500: 1rem;
+  --fs-550: 1.3rem;
   --fs-600: 1.5rem;
   --fs-700: 2rem;
+  --fs-720: 2.35rem;
   --fs-800: 2.5rem;
   --fs-850: 3.3rem;
   --fs-900: 3.5rem;
+  --fs-910: 4rem;
+  --fs-920: 4.5rem;
+  --fs-930: 5rem;
+  --fs-940: 5.5rem;
 
   --fs-body: var(--fs-400);
-  --fs-primary-heading: var(--fs-800);
+  --fs-primary-heading: var(--fs-720);
   --fs-secondary-heading: var(--fs-700);
+  --fs-title: var(--fs-550);
   --fs-nav: var(--fs-500);
   --fs-button: var(--fs-300);
+  --fs-text-green: var(--fs-300);
+
+  --mb-text-heading: var(--size-600);
+  --lh-text-heading: var(--size-420);
+  --lh-button-heading: var(--size-400);
+  --lh-body-heading: var(--size-500);
 
   --size-100: .25rem;
   --size-200: .5rem;
   --size-300: .75rem;
   --size-400: 1rem;
+  --size-410: 1.1rem;
+  --size-420: 1.2rem;
   --size-500: 1.5rem;
   --size-600: 2rem;
+  --size-650: 2.5rem;
   --size-700: 3rem;
   --size-800: 4rem;
   --size-900: 5rem;
-  --size-1000: 6rem;
+  --size-910: 6rem;
+  --size-920: 6.5rem;
+  --size-930: 7rem;
+  --size-940: 7.5rem;
+  --size-950: 8rem;
 
 }
 
@@ -57,76 +81,71 @@
     --fs-800: 3rem;
     --fs-850: 4rem;
     --fs-900: 6rem;
+    --fs-910: 7rem;
+    --fs-920: 8rem;
 
     --fs-body: var(--fs-400);
     --fs-primary-heading: var(--fs-800);
     --fs-secondary-heading: var(--fs-700);
     --fs-nav: var(--fs-400);
     --fs-button: var(--fs-500);
-    --fs-tag: var(--fs-450);
+    --fs-text-green: var(--fs-400);
+    --fs-text-green: var(--fs-400);
 
   }
 }
 
-@media (min-width: 142.5em) {
-  :root {
-    --fs-body: var(--fs-600);
-    --fs-primary-heading: var(--fs-900);
-    --fs-secondary-heading: var(--fs-850);
-    --fs-nav: var(--fs-600);
-    --fs-button: var(--fs-600);
-    --fs-tag: var(--fs-550);
-  } 
-}
 
 /* Box sizing rules */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* Remove default margin */
+/*
+  2. Remove default margin
+*/
 * {
   margin: 0;
-  padding: 0;
-  font: inherit;
 }
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-}
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
+/*
+  3. Allow percentage-based heights in the application
+*/
 html, body {
   height: 100%;
 }
 
-/* Set core body defaults */
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
 body {
-  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
 }
+/* Josh css resets - end */
 
 p {
-  line-height: 1.5;
+  line-height: var(--lh-body-heading);
 }
 
 ul, p {
   margin: 0;
   list-style: none;
-  font-weight: 2
-
 }
 
 a {
@@ -142,32 +161,6 @@ button, input {
   font-size: inherit;
   color: inherit;
 }
-
-/* Make images easier to work with */
-img,
-picture,
-svg {
-  max-width: 100%;
-  display: block;
-}
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-   scroll-behavior: auto;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-
 
 /* UTILITY CLASSES */
 .text-neutral-100 {
@@ -203,17 +196,23 @@ svg {
 
 .fs-primary-heading {
   font-size: var(--fs-primary-heading);
-  line-height: 1.2;
-  margin-bottom: var(--size-600);
+  line-height: 1.1;
+  margin-bottom: var(--mb-text-heading);
 }
 .fs-secondary-heading {
   font-size: var(--fs-secondary-heading);
   line-height: 1.1;
-  margin-bottom: var(--size-600);
+  margin-bottom: var(--mb-text-heading);
 }
 
-.padding-block-400 {
-  padding-block: var(--size-900);
+.margin-block-400 {
+  margin-block: var(--size-920);
+}
+
+@media (max-width: 50em) {
+  :root {
+    --mb-text-heading: var(--size-400);
+  }
 }
 
 @media (max-width: 425px) {
@@ -230,7 +229,8 @@ svg {
   display: flex;
   align-items: center;
   gap: .5rem;
-  font-weight: bold;
+  font-size: var(--fs-text-green);
+  font-weight: var(--fw-bold);
   margin-block: var(--size-500);
 }
 
@@ -239,8 +239,13 @@ svg {
   color: var(--clr-accent-400);
 }
 
+.green-text {
+  font-size: var(--fs-text-green);
+  font-weight: var(--fw-bold);
+}
+
 .logo {
-  width: clamp(150px, 1rem + 10vw, 200px);
+  width: clamp(150px, 1rem + 10vw, 400px);
 }
 
 .super-light {
@@ -256,12 +261,23 @@ svg {
 }
 
 .container {
-  --max-width: 1110px;
-  ---padding: 1rem;
+  ---padding: 3rem;
+  --max-width: 1200px;
 
   width: min(var(--max-width), 100% - var(---padding) * 2);
   margin-inline: auto;
+}
 
+@media (max-width: 649px) {
+  .container {
+    width: min(var(--max-width), 100% - 1rem * 2);
+  }
+}
+
+@media (min-width: 100em) {
+  .container {
+    --max-width: 1910px;
+  }
 }
 
 .one-column {
@@ -284,10 +300,14 @@ svg {
   gap: 1em;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 62.5em) {
   .even-columns {
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
+  }
+  
+  .even-columns > :first-child {
+    margin-left: 5rem;
   }
 }
 
@@ -295,6 +315,7 @@ svg {
 body {
   font-size: var(--fs-body);
   font-family: var(--ff-body);
+  font-weight: var(--fw-semi-bold);
   color: var(--clr-neutral-900);
 }
 
@@ -304,12 +325,12 @@ header {
   padding-top: var(--size-400);
 }
 
-@media (max-width: 49.9375em) {
+@media (max-width: 999px) {
   header {
-    margin-bottom: var(--size-600);
+    margin-bottom: var(--size-700);
   }
   header .hamburger {
-    font-size: clamp(1rem, 1rem + 10vw, 2rem);
+    font-size: clamp(1rem, 1rem + 10vw, 1.5rem) !important;
     display: none;
   }
 }
@@ -349,31 +370,58 @@ header .hamburger {
 
 /* ============================
 ==================Hero section */
-
-@media (max-width: 49.9375em) {
-  #hero .hero__context {
-    order: 1;
+@media (min-width: 50em) {
+  #hero .hero__image {
+    border-radius: 3rem;
+    overflow: hidden;
   }
 }
+@media (min-width: 1000px) {
+  #hero .hero__image {
+    order: 1;
+    height: 100%;
+  }
 
-#hero .hero__image {
-  border-radius: 3rem;
-  overflow: hidden;
+  #hero {
+    height: max-content;
+  }
+
+  #hero .container {
+    height: 100vh;
+    display: block;
+  }
+  
+  #hero .even-columns {
+    align-items: center;
+    height: 100%;
+  }
+
+  #hero .hero__context {
+    width: 70%;
+  }
+  
 }
 
+#hero .hero__context {
+  order: 1;
+}
+
+
+
 #hero .hero__image img {
-  height: 100%;
+  height: 110%;
   object-fit: cover;
-  object-position: left;
+  object-position: top left;
 }
 
 #hero button{
   display: flex;
-  gap: .5rem;
-  padding: .5rem 1.1rem;
-  border-radius: .5rem;
   align-items: center;
-  line-height: 1;
+  justify-content: center;
+  gap: 1rem;
+  padding-inline: 1rem;
+  padding-block: 10px;
+  border-radius: 10px;
 }
 
 #hero .fa-apple {
@@ -381,29 +429,17 @@ header .hamburger {
 }
 
 #hero button h1 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 #hero button p {
-  font-size: .8rem;
+  font-size: .7rem;
+  font-weight: var(--fw-bold);
+  line-height: 1;
 }
 
-/* %%%%%%%%%%%%%%%%%%%%% 
-  COMPLEXITY FIX - MEDIA QUERY - hero %%%%%%%%%%%%%%%%%%%%% */
-@media (min-width: 49.9357em) {
-  #hero {
-      height: 88vh;
-  }
-
-  #hero .container, #hero .even-columns{
-    height: 100%;
-  }
-    
-  #hero .hero__context {
-    margin-top: 8rem;
-    padding-right: 5rem;
-  }
-
+section:last-child {
+  padding-bottom: 5em;
 }
 
 
@@ -415,27 +451,65 @@ header .hamburger {
 
 /* ============================
 ==================For Personal section */
-#personal .even-columns {
-  gap: 4rem;
+@media (min-width: 50em) {
+  #personal .context {
+    width: 70%;
+  }
 }
-#personal .phone {
-  width: min(var(--max-width), 100% - var(---padding) * 2);
-  margin-inline: auto;
-  padding-block: 2rem;
+@media (max-width: 999px) {
+  #personal .even-columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  #personal .context {
+    width: 100%;
+  }
+}
+@media (max-width: 760px) {
+  #personal .even-columns {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 375px) {
+  #personal .phone {
+    width: 100% !important;
+  }
+  #personal .phone-wrap {
+    padding-inline: 1rem !important;
+  }
+  
 }
 
-@media (min-width: 375px) {
-  #personal .phone {
-    /* width: 70%; */
-    margin-inline: auto;
-  }
+#personal .even-columns {
+  gap: 4rem;
+  align-items: center;
+}
+
+#personal .phone {
+  width: 350px;
+  height: 650px;
+  padding-block: 1.5rem;
+  border-radius: 30px;
+  /* background-color: hsl(0, 0%, 93%); */
+  overflow: hidden;
+}
+
+#personal .phone-wrap {
+  padding-inline: 2rem;
+  /* border: 2px solid black; */
+  height: 100%;
 }
 
 #personal .phone-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--size-600);
+  margin-bottom: var(--size-400);
+}
+
+#personal .phone-logo {
+  width: 35px;
 }
 
 #personal .phone-header .fa-bars {
@@ -443,45 +517,74 @@ header .hamburger {
 }
 
 #personal .phone .title-txt {
-  font-size: 2rem;
-  margin-bottom: var(--size-300);
+  font-size: 1.8rem;
+  /* margin-bottom: var(--size-100); */
 }
 
 #personal .phone .para {
-  margin-bottom: 2rem;
+  margin-bottom: var(--size-300);
+  font-weight: var(--fw-bold);
+  font-size: .795rem;
 }
 
 #personal .phone .tree-planted {
   background-color: var(--clr-accent-400);
   color: var(--clr-neutral-100);
-  border-radius: .5rem;
+  border-radius: .3rem;
   display: grid;
   place-items: center;
-  padding-block: var(--size-200);
+  line-height: 1;
+  padding-block: var(--size-300);
   margin-bottom: var(--size-500);
 }
 
 #personal .phone .rate {
   display: flex;
   align-items: center;
+  margin-bottom: 1px;
+}
+
+.btn-og-logo {
+  width: clamp(35px, 1px + 5vw, 20px);
 }
 
 #personal .phone .rate span {
-  font-size: 2rem;
+  font-size: var(--fs-600);
+}
+
+#personal .phone .tree-planted p {
+  font-size: var(--fs-300);
 }
 
 #personal .phone-gallery {
+  /* border: 1px solid red; */
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  grid-auto-flow: row;
+  /* grid-auto-rows: 55%; */
+  gap: 1rem;
+  font-size: .795rem;
+  font-weight: var(--fw-bold);
+  height: 60% !important;
+  overflow: hidden;
+}
+
+#personal .phone:hover .phone-gallery {
+  overflow-y: scroll;
+  scroll-snap-type: mandatory;
+}
+
+#personal .phone-gallery > * {
+  scroll-snap-align: start;
+  height: max-content;
 }
 
 #personal .phone-gallery img {
     width: 100%;
+    /* height: 70%; */
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    border-radius: 1.5rem;
-    margin-bottom: .5rem;
+    border-radius: 1rem;
 }
 
 #personal .phone-gallery span {
@@ -493,110 +596,141 @@ header .hamburger {
 }
 
 
-/* %%%%%%%%%%%%%%%%%%%%% 
-  COMPLEXITY FIX - MEDIA QUERY - personal %%%%%%%%%%%%%%%%%%%%% */
-  @media (min-width: 49.9357em) {
-    #personal .even-columns {
-      gap: 10rem;
-      align-items: center;
-    }
-    
-
-    #personal .phone {
-      width: 400px;
-      height: 700px;
-      border-radius: 5rem;
-      padding-inline: 2rem;
-      margin-left: 5rem;
-    }
-
-    #personal .context {
-      padding-right: 5rem;
-    }
-
-        
-    #personal .phone .tree-planted {
-      background-color: var(--clr-accent-400);
-      color: var(--clr-neutral-100);
-      border-radius: .5rem;
-      display: grid;
-      place-items: center;
-      padding-block: var(--size-100);
-      margin-bottom: var(--size-500);
-    }
-
-    #personal .phone .rate img {
-      width: 30px;
-    }
-
-    #personal .phone .rate span {
-      font-size: 1.7rem;
-    }
-  }
-
 
 /* ============================
 ==================For Business section */
-#business .product-card {
-  width: min(var(--max-width), 100% - var(---padding) * 2);
-  margin-inline: auto;
-  padding-block: 2rem;
+@media (min-width: 50em) {
+  #business .context {
+    width: 70%;
+  }
+
+  #business .business__objects {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    /* border: 1px solid red; */
+  }
 }
+
+#business .even-columns {
+  gap: 4rem;
+  align-items: center;
+}
+
 #business .context .fs-secondary-heading{
   margin-top: var(--size-600) ;
 }
 
-#business .product-card .title {
-  font-size: var(--size-500);
+#business .product-card {
+  width: 250px;
+  min-height: 500px;
+  /* padding-block: 1.5rem; */
+  border-radius: 30px;
+  /* background-color: hsl(0, 0%, 93%); */
 }
 
+#business .product-wrap {
+  height: 100%;
+}
+
+#business .product-card .title {
+  font-size: var(--size-500);
+  margin-bottom: 1rem;
+}
+
+
 #business .product {
-  margin-block: 4rem;
+  margin-top: 2rem;
+  padding-block: 1rem;
+  height: 35%;
   display: grid;
   place-items: center;
-  box-shadow: 0 7px 60px rgba(0,0,0,.05);
-  padding: 5rem 3rem;
+  background: radial-gradient(hsl(0, 0%, 100%), hsl(0, 0%, 98%));
+  position: relative;
+}
+
+#business .product img {
+  width: 150px;
+  z-index: 2;
 }
 
 #business .price-tag {
   font-size: var(--size-500);
+  margin-block: 1rem;
 }
 
-#business .add-cart {
-  color: var(--clr-neutral-100);
-  text-align: center;
-  padding-block: 1rem;
-  border-radius: .3rem;
-  margin-block: var(--size-500);
+#business .phone-para {
+  margin-block-end: 1rem;
+  font-size: var(--fs-300);
 }
 
-#business .box-rate {
-  color: var(--clr-neutral-100);
+#business .phone-btn-cart {
+  background-color: var(--clr-primary-400);
+  color: white;
+  font-size: var(--phone-cart-txt, 1.1rem);
+  padding-block: .5rem;
   text-align: center;
-  padding-block: 1rem;
   border-radius: .3rem;
+}
+
+#business .phone-btn-green {
+  background-color: var(--clr-accent-400);
+  color: white;
+  font-size: var(--phone-green-txt, 0.95em);
+  padding-block: .6rem;
+  text-align: center;
   display: grid;
   place-items: center;
+  border-radius: .3rem;
+  margin-top: 1rem;
 }
 
 #business .box-rate .logo-n-box {
   width: 130px;
-  margin-top: var(--size-100);
 }
 
-#business .instagram {
-  margin-top: var(--size-800);
-  padding: var(--size-500) var(--size-500);
+/* Instagram */
+@media (min-width: 50em) {
+  #business .instagram-header .profile-name {
+    font-size: .7em;
+  }
+  
+}
 
+@media (max-width: 799px) {
+  .business__objects {
+    display: flex;
+    gap: 4rem;
+    align-items: start;
+  }
+}
+
+@media (max-width: 627px) {
+  .business__objects {
+    display: block;
+  }
+
+  #business .instagram {
+    margin-top: 2rem;
+  }
+}
+
+
+#business .instagram {
+  padding: var(--size-500) var(--size-400);
+  border-radius: 5px;
+  width: 250px;
+  min-height: 350px;
 }
 
 #business .instagram i {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 #business .instagram-header {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding-inline: .4rem;
 }
@@ -604,22 +738,24 @@ header .hamburger {
 #business .instagram-header .profile {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 5px;
 }
 
 #business .instagram-header .profile-image {
-  width: 40px;
+  width: clamp(25px, 1px + 1vw, 40px);
   aspect-ratio: 1 / 1;
   background-color: rgb(180, 180, 180);
   border-radius: 50%;
 }
 
-#business .instagram-header .profile-name {
-  /* font-size: var(--fs-500); */
-}
-
 #business .instagram .featured {
   margin-block: var(--size-400);
+  height: 60%;
+}
+
+#business .instagram .featured img {
+  height: 100%;
+  object-fit: cover;
 }
 
 #business .icons {
@@ -631,7 +767,7 @@ header .hamburger {
 
 #business .icon-main {
   display: flex;
-  gap: 1rem;
+  gap: .7rem;
 }
 
 .fa-heart {
@@ -639,276 +775,607 @@ header .hamburger {
 }
 
 #business .instagram .likes {
-  margin-block: var(--size-300);
-  margin-left: .4rem;
+  margin-block: var(--size-100);
+  font-size: var(--size-300);
+}
+
+#business .instagram .description {
+  font-size: var(--size-300);
+  line-height: 1.3;
 }
 
 #business .box-rate {
   background-color: var(--clr-accent-400);
   color: var(--clr-neutral-100);
-  border-radius: .3rem;
+  border-radius: .1rem;
   display: grid;
   place-items: center;
   padding-block: var(--size-200);
-  margin-block: var(--size-500);
+  margin-block-start: var(--size-900);
 }
 
+#business .box-rate img {
+  width: 25px;
+}
 
 #business .box-rate h1 {
   display: flex;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  line-height: 1;
 }
 
 #business .box-rate p {
   text-align: center;
+  font-size: var(--fs-300);
+  line-height: 1;
+  padding-block: .2rem;
 }
 
-/* %%%%%%%%%%%%%%%%%%%%% 
-  COMPLEXITY FIX - MEDIA QUERY - Business %%%%%%%%%%%%%%%%%%%%% */
-  @media (min-width: 49.9357em) {
-    #business .even-columns {
-      gap: 1rem;
-      align-items: center;
-    }
-
-    #business .context {
-      padding-right: 5rem;
-      margin-left: 5rem;
-    }
-    
-    #business .business__objects {
-      /* border: 1px solid red; */
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      /* width: 50%; */
-    }
-    
-    #business .product-card {
-      padding-inline: 2rem;
-      font-size: .8rem;
-      margin-inline-end: 1rem;
-      padding-block: 2rem;
-      border-radius: var(--size-900);
-      width: 300px;
-      height: 500px;
-    }
-
-    #business .context .fs-secondary-heading{
-      margin-top: var(--size-500) ;
-    }
-    
-    #business .product-card .title {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      max-width: 80%;
-    }
-    
-    #business .product {
-      margin-block: 0rem;
-      padding: 3rem 3rem;
-      height: 150px;
-      position: relative;
-    }
-
-    #business .product img {
-      position: absolute;
-      height: 80%;
-      width: 60%;
-    }
-    
-    #business .product-card .price-tag {
-      font-size: 1.2rem;
-      margin-block: 1rem;
-      /* border: 1px solid red; */
-    }
-
-    #business .para {
-      font-size: .7rem;
-    }
-    
-    #business .add-cart {
-      padding-block: .7rem;
-      border-radius: .2rem;
-      margin-block: var(--size-400);
-    }
-    
-    #business .product-card .box-rate {
-      border-radius: .2rem;
-      padding-block: var(--size-200);
-      margin-block-start: 0;
-    }
-    
-    #business .product-card .box-rate .logo-n-box {
-      width: 100px;
-      margin-top: var(--size-100);
-    }
-  
-    #business .instagram {
-      margin-top: 0;
-      padding: var(--size-500) var(--size-500);
-      border-radius: var(--size-300);
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    #business .instagram i {
-      font-size: 1rem;
-    }
-
-    #business .instagram-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-inline: .4rem;
-    }
-
-    #business .instagram-header .profile {
-      gap: .5rem;
-    }
-
-    #business .instagram-header .profile-image {
-      width: 40px;
-    }
-
-    #business .instagram-header .profile-name {
-      font-size: 11px;
-    }
-
-    #business .instagram .featured {
-      height: 150px;
-    }
-
-    #business .instagram .featured img {
-      height: 100%;
-      object-fit: cover;
-    }
-
-    #business .instagram p {
-      font-size: .6rem;
-    }
-    
-    #business .box-rate h1 {
-      display: flex;
-      align-items: center;
-      font-size: 1.3rem;
-    }
-    
-    #business .box-rate p {
-      font-size: var(--fs-300);
-    }
-
-    #business .box-rate img {
-      width: 25px;
-    }
-    
-}
 
 /* ============================
 ==================Sign up section */
-@media (min-width: 50em) {
-  #sign-up form {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
-  #sign-up label input {
-    min-width: 300px;
+
+
+
+@media (max-width: 999px) {
+  .even-columns {
+    place-items: center;
   }
 }
 
-#sign-up form {
-  margin-top: 2rem;
-}
-
-#sign-up label  {
-  position: relative;
-}
-
-#sign-up label::after {
-  content: '';
-  position: absolute;
-  bottom: -35%;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  background-color: var(--clr-neutral-900);
-}
 
 
 
-/* ============================
-==================Footer section */
-footer {
-  padding-bottom: 1rem;
-}
+@media (min-width: 1600px) {
+  :root {
+    --fs-300: .875rem;
+    --fs-400: 1rem;
+    --fs-450: 1.35rem;
+    --fs-460: 1.45rem;
+    --fs-500: 1.5rem;
+    --fs-600: 2rem;
+    --fs-700: 2.5rem;
+    --fs-800: 3rem;
+    --fs-850: 4rem;
+    --fs-870: 4.5rem;
+    --fs-900: 6rem;
+    --fs-910: 7rem;
+    --fs-920: 8rem;
 
-footer .side1 {
-  display: grid;
-  gap: 3.5rem;
-}
-
-footer .footer__links {
-  display: flex;
-  gap: 2rem;
-  font-weight: bold;
-  height: max-content;
-  align-self: flex-end;
-  margin-left: auto;
-}
-
-
-/* BIG SCREENS */
-@media (min-width: 142.5em) {
-  .fs-primary-heading {
-    font-size: var(--fs-primary-heading);
-    line-height: 1.2;
-    margin-bottom: var(--size-800);
+    --fs-body: var(--fs-450);
+    --fs-primary-heading: var(--fs-870);
+    --fs-secondary-heading: var(--fs-850);
+    --fs-nav: var(--fs-500);
+    --fs-button: var(--fs-600);
+    --fs-text-green: var(--fs-450);
+    
+    --size-100: .25rem;
+    --size-200: .5rem;
+    --size-300: .75rem;
+    --size-400: 1rem;
+    --size-410: 1.1rem;
+    --size-420: 1.2rem;
+    --size-500: 1.5rem;
+    --size-600: 2rem;
+    --size-650: 2.5rem;
+    --size-700: 3rem;
+    --size-800: 4rem;
+    --size-900: 5rem;
+    --size-910: 6rem;
+    --size-920: 6.5rem;
+    --size-930: 7rem;
+    --size-940: 7.5rem;
+    --size-950: 8rem;
   }
-  .fs-secondary-heading {
-    font-size: var(--fs-secondary-heading);
-    line-height: 1.1;
-    margin-bottom: var(--size-800);
-  }
+
   .container {
-    --max-width: 2210px;
-    ---padding: 1rem;
-  
-    width: min(var(--max-width), 100% - var(---padding) * 2);
-    margin-inline: auto;
+    --max-width: 1510px;
   }
 
-  header .logo {
-    width: 300px;
-    margin-right: 3rem;
+  p {
+    line-height: 1.5;
   }
-  
 
-  #hero {
-    height: 100vh;
+  
+    /* ==================
+    ======== HERO */
+    #hero button{
+      gap: 2.5rem;
+      padding-inline: 1.5rem;
+      padding-block: 10px;
+      border-radius: 10px;
+    }
+  
+    #hero .fa-apple {
+      font-size: 2.5rem;
+    }
+  
+    #hero button h1 {
+      font-size: 1.7rem;
+    }
+  
+    #hero button p {
+      font-size: 1rem;
+      font-weight: var(--fw-bold);
+      line-height: 1;
+    }
+  
+  
+    #personal .phone {
+      width: 500px;
+      height: 800px;
+    }
+  
+    #personal .phone .title-txt {
+      font-size: 2.5rem;
+    }
+  
+    #personal .phone .para {
+      font-size: 1.2rem;
+      margin-bottom: var(--size-500);
+    }
+      
+    #personal .phone .tree-planted {
+      margin-bottom: var(--size-500);
+    }
+  
+    #personal .phone .rate {
+      margin-bottom: 1px;
+    }
+  
+    .btn-og-logo {
+      width: clamp(45px, 1px + 5vw, 20px);
+    }
+  
+    #personal .phone .rate span {
+      font-size: var(--fs-700);
+    }
+  
+    #personal .phone .tree-planted p {
+      font-size: var(--fs-410);
+    }
+  
+    #personal .phone-gallery {
+      font-size: 1.2rem;
+      height: 60% !important;
+    }
+
+    .context .fs-secondary-heading{
+      margin-block: var(--size-700) ;
+    }
+  
+    .context p {
+      margin-bottom: 3rem;
+    }
+  
+    #business .product-card {
+      width: 400px;
+      min-height: 700px;
+    }
+  
+    #business .product-wrap {
+      height: 100%;
+    }
+  
+    #business .product-card .title {
+      font-size: var(--size-600);
+    }
+  
+    #business .product {
+      margin-top: 2rem;
+      padding-block: 4rem;
+      height: 45%;
+    }
+  
+    #business .product img {
+      width: 150px;
+    }
+      
+    #business .price-tag {
+      font-size: var(--size-600);
+      margin-block: 1rem;
+    }
+  
+    #business .phone-para {
+      margin-block-end: 1rem;
+      font-size: var(--fs-410);
+    }
+  
+    #business .phone-btn-cart {
+      font-size: var(--phone-cart-txt, 1.5rem);
+    }
+  
+    #business .phone-btn-green {
+      font-size: var(--phone-green-txt, 0.95em);
+      padding-block: .8rem;
+      margin-top: 1.5rem;
+    }
+  
+    #business .phone-btn-green .logo-n-box {
+      width: 200px;
+    }
+    
+    #business .instagram {
+      padding: var(--size-500) var(--size-400);
+      border-radius: 5px;
+      width: 300px;
+      height: 550px;
+    }
+  
+    #business .instagram i {
+      font-size: 1.1rem;
+    }
+  
+    #business .instagram-header {
+      padding-inline: .4rem;
+    }
+  
+    #business .instagram-header .profile {
+      gap: 9px;
+    }
+  
+    #business .instagram-header .profile-image {
+      width: clamp(35px, 1px + 1vw, 40px);
+    }
+  
+    #business .instagram .featured {
+      margin-block: var(--size-500);
+      height: 55%;
+    }
+  
+    #business .icons {
+      padding-inline: .4rem;
+    }
+  
+    #business .icon-main {
+      display: flex;
+      gap: 1rem;
+    }
+  
+    #business .instagram .likes {
+      margin-block: var(--size-100);
+      font-size: var(--size-410);
+    }
+  
+    #business .instagram .description {
+      font-size: var(--size-410);
+      line-height: 1.3;
+    }
+  
+    #business .box-rate {
+      border-radius: .1rem;
+      padding-block: var(--size-200);
+      margin-block-start: var(--size-900);
+    }
+  
+    #business .box-rate img {
+      width: 30px;
+    }
+  
+    #business .box-rate h1 {
+      font-size: 1.5rem;
+    }
+  
+    #business .box-rate p {
+      font-size: var(--fs-400);
+      padding-block: .5rem;
+    }
+  
 }
 
-  #hero .hero__context {
-    padding-left: 14rem;
-    margin-top: 15rem;
+
+
+
+/*==========================================
+================= MEDIA QUERY FOR BIG SCREEN  */
+@media (min-width: 1954px) {
+  :root {
+    --fs-300: .875rem;
+    --fs-400: 1rem;
+    --fs-450: 1.35rem;
+    --fs-500: 1.5rem;
+    --fs-600: 2rem;
+    --fs-700: 2.5rem;
+    --fs-800: 3rem;
+    --fs-850: 4rem;
+    --fs-870: 4.5rem;
+    --fs-900: 6rem;
+    --fs-910: 7rem;
+    --fs-920: 8rem;
+
+    --fs-body: var(--fs-600);
+    --fs-primary-heading: var(--fs-900);
+    --fs-secondary-heading: var(--fs-870);
+    --fs-nav: var(--fs-500);
+    --fs-button: var(--fs-600);
+    --fs-text-green: var(--fs-600);
+    
+    --size-100: .25rem;
+    --size-200: .5rem;
+    --size-300: .75rem;
+    --size-400: 1rem;
+    --size-410: 1.1rem;
+    --size-420: 1.2rem;
+    --size-500: 1.5rem;
+    --size-600: 2rem;
+    --size-650: 2.5rem;
+    --size-700: 3rem;
+    --size-800: 4rem;
+    --size-900: 5rem;
+    --size-910: 6rem;
+    --size-920: 6.5rem;
+    --size-930: 7rem;
+    --size-940: 7.5rem;
+    --size-950: 8rem;
   }
 
-  #hero .hero__context > p {
-    margin-bottom: var(--size-700);
+  body {
+    font-size: var(--fs-600);
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  .even-columns > :first-child {
+    margin-left: 10rem;
+  }
+    
+  .container {
+    --max-width: 2200px;
+  }
+
+    /* ==================
+    ======== HERO */
+  #hero .even-columns {
+    gap: 18rem;
+  }
+  
+  #hero .hero__context {
+    width: 100%;
+  }
+
+  #hero .hero__context .fs-primary-heading {
+    width: 80%;
+  }
+
+  #hero .hero__context .para {
+    width: 93%;
+  }
+
+  #hero .hero__context .simple-link {
+    margin-block: 4rem;
+  }
+    
+  #hero button{
+    gap: 2.5rem;
+    padding-inline: 1.5rem;
+    padding-block: 10px;
+    border-radius: 10px;
   }
 
   #hero .fa-apple {
-    font-size: 3.5rem;
+    font-size: 5rem;
   }
-    
+
   #hero button h1 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 
   #hero button p {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-weight: var(--fw-bold);
+    line-height: 1;
+  }
+
+
+  #personal .phone {
+    width: 650px;
+    height: 1100px;
+    padding-block: 2rem;
+    border-radius: 50px;
+  }
+
+  #personal .phone-wrap {
+    padding-inline: 3rem;
+  }
+
+  #personal .phone-header {
+    margin-bottom: var(--size-500);
+  }
+
+  #personal .phone-logo {
+    width: 50px;
+  }
+
+  #personal .phone-header .fa-bars {
+    font-size: 2rem;
+  }
+
+  #personal .phone .title-txt {
+    font-size: 3.5rem;
+  }
+
+  #personal .phone .para {
+    margin-bottom: var(--size-600);
+    font-weight: var(--fw-bold);
+    font-size: 1.5rem;
+  }
+    
+  #personal .phone .tree-planted {
+    padding-block: var(--size-300);
+    margin-bottom: var(--size-700);
+  }
+
+  #personal .phone .rate {
+    margin-bottom: 1px;
+  }
+
+  .btn-og-logo {
+    width: clamp(45px, 1px + 5vw, 20px);
+  }
+
+  #personal .phone .rate span {
+    font-size: var(--fs-800);
+  }
+
+  #personal .phone .tree-planted p {
+    font-size: var(--fs-500);
+  }
+
+  #personal .phone-gallery {
+    gap: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: var(--fw-bold);
+    height: 60% !important;
+    overflow: hidden;
+  }
+
+  #personal .phone:hover .phone-gallery {
+    overflow-y: scroll;
+    scroll-snap-type: mandatory;
+  }
+
+  #personal .phone-gallery > * {
+    scroll-snap-align: start;
+    height: max-content;
+  }
+
+  #personal .phone-gallery img {
+      width: 100%;
+      /* height: 70%; */
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 1rem;
+  }
+
+  #personal .phone-gallery span {
+    font-weight: var(--fw-bold);
+  }
+
+  .context .fs-secondary-heading{
+    margin-block: var(--size-700) ;
+  }
+
+  .context p {
+    margin-bottom: 3rem;
+  }
+
+  #business .product-card {
+    width: 500px;
+    min-height: 700px;
+  }
+
+  #business .product-wrap {
+    height: 100%;
+  }
+
+  #business .product-card .title {
+    font-size: var(--size-700);
+    margin-bottom: 1rem;
+  }
+
+  #business .product {
+    margin-top: 2rem;
+    padding-block: 4rem;
+    height: 45%;
+  }
+
+  #business .product img {
+    width: 200px;
+  }
+    
+  #business .price-tag {
+    font-size: var(--size-700);
+    margin-block: 1rem;
+  }
+
+  #business .phone-para {
+    margin-block-end: 1rem;
+    font-size: var(--fs-500);
+  }
+
+  #business .phone-btn-cart {
+    font-size: var(--phone-cart-txt, 1.9rem);
+    padding-block: .7rem;
+    border-radius: .3rem;
+  }
+
+  #business .phone-btn-green {
+    font-size: var(--phone-green-txt, 0.95em);
+    padding-block: .8rem;
+    margin-top: 2rem;
+  }
+
+  #business .phone-btn-green .logo-n-box {
+    width: 250px;
   }
   
-.padding-block-400 {
-  padding-block: 7rem;
-}
+  #business .instagram {
+    padding: var(--size-500) var(--size-600);
+    border-radius: 5px;
+    width: 500px;
+    min-height: 600px;
+  }
+
+  #business .instagram i {
+    font-size: 2rem;
+  }
+
+  #business .instagram-header {
+    padding-inline: .4rem;
+  }
+
+  #business .instagram-header .profile {
+    gap: 9px;
+  }
+
+  #business .instagram-header .profile-image {
+    width: clamp(45px, 1px + 1vw, 40px);
+  }
+
+  #business .instagram .featured {
+    margin-block: var(--size-500);
+    height: 60%;
+  }
+
+  #business .icons {
+    padding-inline: .4rem;
+  }
+
+  #business .icon-main {
+    display: flex;
+    gap: 1rem;
+  }
+
+  #business .instagram .likes {
+    margin-block: var(--size-100);
+    font-size: var(--size-500);
+  }
+
+  #business .instagram .description {
+    font-size: var(--size-500);
+    line-height: 1.3;
+  }
+
+  #business .box-rate {
+    border-radius: .1rem;
+    padding-block: var(--size-400);
+    margin-block-start: var(--size-900);
+  }
+
+  #business .box-rate img {
+    width: 45px;
+  }
+
+  #business .box-rate h1 {
+    font-size: 2.2rem;
+  }
+
+  #business .box-rate p {
+    font-size: var(--fs-500);
+    padding-block: .5rem;
+  }
+
 }
