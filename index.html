@@ -11,14 +11,14 @@
 
   <title>Officially Greener</title>
 </head>
-<body>
+<body onload="slider()">
 
   <header class="primary-header">
     <div class="container">
       <img src="Logo/Officially Greener Transparent background.png" alt="officially greener" class="primary-logo logo">
       <ul class="primary-nav">
-        <li><a href="#" class="fw-bold">Personal</a></li>
-        <li><a href="#" class="fw-bold">Business</a></li>
+        <li><a href="#" class="fw-semi-bold">Personal</a></li>
+        <li><a href="#" class="fw-semi-bold">Business</a></li>
       </ul>
       <i class="fa-sharp fa-solid fa-bars hamburger"></i>
     </div>
@@ -26,13 +26,14 @@
   <!-- Header end -->
 
   <main>
+
     <section id="hero">
       <div class="container">
         <div class="even-columns">
           
           <div class="hero__context">
             <h1 class="fs-primary-heading fw-bold">Your difference on the planet starts here</h1>
-            <p class="fw-regular">The green membership that plants trees protects ecosystems and restores wildlife habitats.</p>
+            <p class="para">The green membership that plants trees protects ecosystems and restores wildlife habitats.</p>
             <a class="simple-link fw-semi-bold">START PLANTING<i class="fa-sharp fa-solid fa-arrow-right-long"></i></a>
             <button class="button white-box">
               <i class="fa-brands fa-apple"></i>
@@ -44,38 +45,31 @@
           </div>
   
           <div class="hero__image">
-            <img src="Images/Magagascar.jpg" alt="">
+            <img src="Images/Magagascar.jpg" id="slideImg">
           </div>
   
         </div>
       </div>
     </section>
 
-    <section id="fight-back" class="padding-block-400">
-      <div class="container white-box one-column">
-        <h1 class="fw-bold fs-secondary-heading">Fight back against climate change</h1>
-        <p class="fw-regular">The Earth's atmosphere is warming faster than it probably ever has. In some cases, weather patterns, climates and natural environments are changing quicker than wildlife or people can adapt</p>
-      </div>
-    </section>
-
-    <section id="personal" class="padding-block-400">
+    <section id="personal" class="margin-block-400">
       <div class="container">
         <div class="even-columns">
 
           <div class="phone white-box">
-            <div class="container">
+            <div class="phone-wrap">
               <div class="phone-header">
-                <img src="Logo/officially logo mobile.png" alt="officially greener" class="phone-logo">
+                <img src="Logo/officially logo mobile.png" alt="officially greener"class="phone-logo">
                 <i class="fa-sharp fa-solid fa-bars"></i>
               </div>
-              <h1 class="fw-bold title-txt">Your Impact</h1>
+              <h1 class="fw-bold title-txt">Dashboard</h1>
               <p class="para">Your Positive Impact</p>
               <div class="tree-planted">
                 <div class="rate">
-                  <img src="Logo/officially logo mobile.png" class="invert">
+                  <img src="Logo/officially logo mobile.png" class="invert btn-og-logo">
                   <span class="fw-bold">155</span>
                 </div>
-                <p class="fw-bold">Trees Planted</p>
+                <p class="fw-semi-bold">Trees Planted</p>
               </div>
   
               <div class="phone-gallery">
@@ -85,7 +79,7 @@
                 </div>
                 <div>
                   <img src="Images/Kenya.jpg" alt="">
-                  <span>kenya</span>
+                  <span>Kenya</span>
                 </div>
                 <div>
                   <img src="Images/Phillipenes.jpg" alt="">
@@ -95,46 +89,70 @@
                   <img src="Images/Nepal.jpg" alt="">
                   <span>Nepal</span>
                 </div>
+                <div>
+                  <img src="Images/20190819_Antsanita_0144.jpg" alt="">
+                  <span>Mozambique</span>
+                </div>
+                <div>
+                  <img src="Images/20190819_Antsanita_0228wm.jpg" alt="">
+                  <span>Ethiopia</span>
+                </div>
+                <div>
+                  <img src="Images/Indonesia_2018_Man In Boat.jpg" alt="">
+                  <span>Indonesia</span>
+                </div>
+                <div>
+                  <img src="Images/Haiti_2018_Seedlings 2.jpg" alt="">
+                  <span>Haiti</span>
+                </div>
+                <div>
+                  <img src="Images/Haiti_2018_Seedlings 3.jpg" alt="">
+                  <span>Honduras</span>
+                </div>
+                <div>
+                  <img src="Images/Seedlings Sarobidy with copyright.jpg" alt="">
+                  <span>Brazil</span>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="context">
-            <div class="fw-semi-bold text-accent-400 tag">FOR PERSONAL</div>
+            <div class="fw-semi-bold text-accent-400 green-text">FOR PERSONAL</div>
             <h1 class="fw-bold fs-secondary-heading">Make a difference every month</h1>
-            <p class="fw-regular">Choose your plan and plant trees around the world monthly. Download our app and see where your trees are planted, invite friends, send gifts and more.</p>
+            <p>Choose your plan and plant trees around the world monthly. Download our app and see where your trees are planted, invite friends, send gifts and more.</p>
             <a class="simple-link fw-semi-bold">START PLANTING<i class="fa-sharp fa-solid fa-arrow-right-long"></i></a>
           </div>
-
+          
         </div>
       </div>
     </section>
 
-    <section id="business" class="padding-block-400">
+    <section id="business" class="margin-block-400">
       <div class="container">
         <div class="even-columns">
           <div class="context">
-            <div class="fw-semi-bold text-accent-400">FOR BUSINESS</div>
-            <h1 class="fs-secondary-heading fw-bold">Increase your green initiatives</h1>
-            <p class="fw-regular">Reach your sustainable goals. Integrate our API, access content, use our certified badges, and plant trees for customers and employees. </p>
+            <div class="fw-semi-bold text-accent-400 green-text">FOR BUSINESS</div>
+            <h1 class="fw-bold fs-secondary-heading">Increase your green initiatives</h1>
+            <p>Reach your sustainable goals. Integrate our API, access content, use our certified badges, and plant trees for customers and employees. </p>
             <a class="simple-link fw-semi-bold">GET IN TOUCH<i class="fa-sharp fa-solid fa-arrow-right-long"></i></a>
           </div>
 
           <div class="business__objects">
-            <div class="product-card white-box">
-              <div class="container">
-                <h1 class="fw-bold title">Wireless Headphones</h1>
-              <div class="product">
-                <img src="Images/headphone.png" alt="headphone" width="300px">
-              </div>
-              <h1 class="price-tag fw-bold">£199</h1>
-              <p class="para">High sound quality that does good for our planet</p>
-              <div class="add-cart bg-primary-400 fw-bold">Add to cart</div>
-              <div class="box-rate bg-accent-400">
-                <p class="fw-semi-bold">This product plants 3 tree</p>
-                <img src="Logo/Officially Greener Transparent background.png" alt="officially greener" width="150px" class="invert logo-n-box">
-              </div>
-              </div>
+            <div class="product-card">
+                <div class="product-wrap">
+                  <h1 class="fw-bold title">Wireless Headphones</h1>
+                  <div class="product">
+                    <img src="Images/headphone.png" alt="headphone">
+                  </div>
+                  <h1 class="price-tag fw-bold">£199</h1>
+                  <p class="phone-para">High sound quality that does good for our planet</p>
+                  <div class="phone-btn-cart fw-bold">Add to cart</div>
+                  <div class="phone-btn-green">
+                    <p class="fw-semi-bold">This product plants 3 tree</p>
+                    <img src="Logo/Officially Greener Transparent background.png" alt="officially greener" width="150px" class="invert logo-n-box">
+                  </div>
+                </div>
             </div>
 
             <div>
@@ -147,7 +165,7 @@
                   <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
                 <div class="featured">
-                  <img src="Images/Nepal.jpg" alt="">
+                  <img src="Images/IMG_3749 copywm.jpg" alt="">
                 </div>
 
                 <div class="icons">
@@ -159,7 +177,7 @@
 
                   <i class="fa-solid fa-bookmark"></i>
                 </div>
-                <h1 class="likes fw-bold">552 likes</h1>
+                <p class="likes fw-bold">552 likes</p>
                 <p class="description fw-regular">
                   <strong class="fw-semi-bold">@sustainablecompany</strong> We have planted 1,000 trees this month with help from our employees and customers 💚
                 </p>
@@ -174,36 +192,9 @@
         </div>
       </div>
     </section>
-
-    <section id="sign-up" class="padding-block-400">
-      <div class="container white-box one-column">
-        <h1 class="fw-bold fs-secondary-heading">Sign up for our monthly newsletter</h1>
-        <p class="fw-regular">Receive news about projects we work on, stories and general updates from the team</p>
-        <form>
-          <label for="email">
-            <input type="email" name="email" id="form-email" placeholder="luke.chapman@earthbroadband.com">
-          </label>
-          <a class="simple-link fw-semi-bold">SUBMIT<i class="fa-sharp fa-solid fa-arrow-right-long"></i></a>
-        </form>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">
-        <div class="even-columns">
-          <div class="side1">
-            <img src="Logo/Officially Greener Transparent background.png" alt="" class="footer-logo logo">
-            <p class="landing-page__gray-para super-light">&copy; copyright Officially Greener</p>
-          </div>
-            <ul class="footer__links">
-              <li><a href="http://">Terms</a></li>
-              <li><a href="http://">Privacy</a></li>
-              <li><a href="http://">Cookies</a></li>
-            </ul>
-        </div>
-      </div>
-    </footer>
+   
   </main>
-  
+
+  <script src="script.js"></script>
 </body>
 </html>
