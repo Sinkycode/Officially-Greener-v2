@@ -1,9 +1,9 @@
 const slideImg = document.getElementById('slideImg');
 const images = new Array (
-  "images/Magagascar.jpg",
-  "images/Kenya.jpg",
-  "images/Phillipenes.jpg",
-  "images/Nepal.jpg",
+  "Images/Magagascar.jpg",
+  "Images/Kenya.jpg",
+  "Images/Phillipenes.jpg",
+  "Images/Nepal.jpg",
   "Images/20190819_Antsanita_0144.jpg",
   "Images/20190819_Antsanita_0228wm.jpg",
   "Images/Indonesia_2018_Man In Boat.jpg",
